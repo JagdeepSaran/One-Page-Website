@@ -1,117 +1,203 @@
-/* General page styling */
-body{
-  font-family: Arial, sans-serif;
-  margin:0;
-  padding:0;
-  background:#f4f4f4;
-  color:#333;
+/* ===== RESET / BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Navigation bar */
-ul{
-  list-style:none;
-  margin:0;
-  padding:15px;
-  background:#2c3e50;
-  display:flex;
-  justify-content:center;
-  gap:40px;
-}
-ul li{ display:inline; font-weight:bold; }
-ul a{ text-decoration:none; color:#fff; }
-ul a:hover{ color:#f39c12; }
-
-/* Home / hero */
-#home{
-  background:url('../Images/Image1.png') no-repeat center/cover;
-  height:300px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-size:40px;
-  font-weight:700;
-  text-shadow:0 2px 6px rgba(0,0,0,.4);
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  background: #f8f9fb;
+  color: #222;
 }
 
-/* Gallery */
-#gallery{ padding:40px; text-align:center; }
-#gallery h1{ margin-bottom:20px; }
-
-/* Grid layout */
-#gallery .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
+/* ===== NAV ===== */
+nav {
+  background: #1e3a8a;
+  padding: 12px;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* Cards */
-.card{
-  background:#fff;
-  border-radius:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,.08);
-  padding:12px;
-  transition:transform .2s ease, box-shadow .2s ease;
-}
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 6px 16px rgba(0,0,0,.12);
-}
-.card img{
-  width:100%;
-  height:auto;
-  border-radius:8px;
-  display:block;
-  transition:transform .3s ease;
-}
-.card img:hover{ transform:scale(1.03); }
-.card h3{ margin:10px 0 6px; font-size:18px; }
-.card p{ margin:0 0 6px; font-size:14px; }
-
-/* Video Section */
-#video{
-  background:#fff;
-  padding:50px 20px;
-  text-align:center;
-}
-#video h1{
-  margin-bottom:20px;
-  font-size:28px;
-}
-#video iframe{
-  max-width:100%;
-  border-radius:10px;
-  box-shadow:0 4px 12px rgba(0,0,0,.15);
+/* ===== HOME ===== */
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background: url("../Images/Image1.png") center/cover no-repeat;
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
-/* Reservations */
-#contact{
-  background:#ecf0f1;
-  padding:40px;
-  text-align:center;
+/* ===== GALLERY ===== */
+#gallery {
+  padding: 40px 20px;
 }
-.rsvp{
-  display:block;
-  margin:10px auto;
-  padding:10px;
-  width:260px;
-  border:1px solid #ccc;
-  border-radius:4px;
+#gallery h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
-input[type="submit"]{
-  background:#27ae60;
-  color:#fff;
-  padding:10px 20px;
-  border:none;
-  border-radius:4px;
-  cursor:pointer;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
 }
-input[type="submit"]:hover{ background:#219150; }
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform .2s;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+.card img {
+  width: 100%;
+  display: block;
+  cursor: zoom-in;
+}
+.card div {
+  padding: 12px;
+}
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.card p {
+  font-size: 0.9rem;
+  color: #444;
+}
 
-/* Footer */
-footer{
-  text-align:center;
-  padding:15px;
-  background:#2c3e50;
-  color:#fff;
+/* ===== VIDEO ===== */
+#video {
+  padding: 40px 20px;
+  background: #eef2ff;
 }
+#video h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== RESERVATIONS FORM ===== */
+#contact {
+  padding: 40px 20px;
+}
+#contact h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#contact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+input.rsvp {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+input[type="submit"] {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+input[type="submit"]:hover {
+  background: #3749a3;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1e3a8a;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9rem;
+}
+
+/* ===== LIGHTBOX (MODAL GALLERY) ===== */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.lightbox-overlay.open { display: flex; }
+
+.lightbox-content {
+  position: relative;
+  max-width: min(92vw, 1100px);
+  max-height: 90vh;
+}
+.lightbox-image {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+}
+.lightbox-caption {
+  margin-top: 10px;
+  color: #f7f7f7;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.lightbox-close, .lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  font-size: 28px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+.lightbox-close {
+  top: 12px;
+  right: 12px;
+  transform: none;
+  font-size: 24px;
+}
+.lightbox-prev { left: -58px; }
+.lightbox-next { right: -58px; }
+@media (max-width: 700px) {
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+}
+.lightbox-close:hover, .lightbox-prev:hover, .lightbox-next:hover {
+  background: rgba(255,255,255,.28);
+}
+Attachments area
+Preview YouTube video FIRST CLASS BUS “Vonlane” from Atlanta to Nashville
+
